@@ -22,14 +22,14 @@
   "models": {
     "mode": "merge",
     "providers": {
-      "ollama": {
+      "ollama-cloud": {
         "baseUrl": "https://ollama.com/v1",
         "apiKey": "${OLLAMA_API_KEY}",
         "api": "openai-completions",
         "models": [
           {
-            "id": "gemini-3-flash-preview:cloud",
-            "name": "gemini-3-flash-preview:cloud",
+            "id": "gemini-3-flash-preview:latest",
+            "name": "gemini-3-flash-preview:latest (Cloud)",
             "reasoning": false,
             "input": [
               "text",
@@ -83,12 +83,12 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "ollama/gemini-3-flash-preview:cloud",
+        "primary": "ollama-cloud/gemini-3-flash-preview:latest",
         "fallbacks": [
-          "ollama/kimi-k2.5:cloud",
-          "ollama/deepseek-v3:cloud",
-          "ollama/deepseek-r1:cloud",
-          "ollama/qwen3:cloud"
+          "ollama-cloud/kimi-k2.5:cloud",
+          "ollama-cloud/deepseek-v3:cloud",
+          "ollama-cloud/deepseek-r1:cloud",
+          "ollama-cloud/qwen3:cloud"
         ]
       },
       "workspace": "/Users/nijia/.openclaw/workspace"
@@ -215,21 +215,21 @@
         "name": "intern-lobster",
         "workspace": "/Users/nijia/.openclaw/workspaces/intern-lobster",
         "agentDir": "/Users/nijia/.openclaw/agents/intern-lobster/agent",
-        "model": "ollama/gemini-3-flash-preview:cloud"
+        "model": "ollama-cloud/gemini-3-flash-preview:latest"
       },
       {
         "id": "senior-lobster",
         "name": "senior-lobster",
         "workspace": "/Users/nijia/.openclaw/workspaces/senior-lobster",
         "agentDir": "/Users/nijia/.openclaw/agents/senior-lobster/agent",
-        "model": "ollama/gemini-3-flash-preview:cloud"
+        "model": "ollama-cloud/gemini-3-flash-preview:latest"
       },
       {
         "id": "director-lobster",
         "name": "director-lobster",
         "workspace": "/Users/nijia/.openclaw/workspaces/director-lobster",
         "agentDir": "/Users/nijia/.openclaw/agents/director-lobster/agent",
-        "model": "ollama/gemini-3-flash-preview:cloud"
+        "model": "ollama-cloud/gemini-3-flash-preview:latest"
       }
     ]
   },

@@ -1,0 +1,64 @@
+[
+  {
+    "agentId": "personal",
+    "name": "On This Day 每日歷史回報 (NiJia)",
+    "enabled": true,
+    "schedule": {
+      "expr": "0 9 * * *",
+      "kind": "cron",
+      "tz": "Asia/Taipei"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "[[reply_to_current]] <@545498458270859304> 🍪 餅乾報時！今日歷史快訊來囉：\n\n1. 請先到 https://www.onthisday.com/today/events.php 抓取今天的歷史事件。\n2. 用繁體中文整理 3 個最有趣的事件與 1 個壽星。\n3. **【新增任務】**：請幫我選出 5 個最重要的資訊，並呼叫工具生成一張尺寸為 1080x1920 的 Instagram 限時動態圖卡（包含年份與簡短敘述），背景使用餅乾深色調風格，最後將圖片發送給 NiJia。\n\n要求：文字精簡、圖片美觀、附上原文連結。"
+    },
+    "delivery": {
+      "channel": "discord",
+      "mode": "announce",
+      "to": "1488914775541944474"
+    }
+  },
+  {
+    "agentId": "writer-assistant",
+    "name": "提醒 NiJia 預約 Peugeot 408 試駕",
+    "enabled": true,
+    "schedule": {
+      "at": "2026-04-06T02:00:00.000Z",
+      "kind": "at"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "[[reply_to_current]] <@545498458270859304> 🍪 餅乾提醒時間到！別忘了預約明天（週二）的 Peugeot 408 試駕看車喔！祝你順利預約到喜歡的時段！🦁"
+    },
+    "delivery": {
+      "channel": "1482425410997190676",
+      "mode": "announce",
+      "to": "545498458270859304"
+    }
+  },
+  {
+    "agentId": "gaming-generalist",
+    "name": "Switch 每週五特價提醒 (NiJia)",
+    "enabled": true,
+    "schedule": {
+      "expr": "0 10 * * 5",
+      "kind": "cron",
+      "tz": "Asia/Taipei"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "now",
+    "payload": {
+      "kind": "agentTurn",
+      "message": "請掃描「遊戲箱子」或 eShop 資訊，幫 NiJia (<@545498458270859304>) 整理 5 個目前最便宜且值得入手的 Switch 特價遊戲（包含特價地區、折合台幣價格、是否支援中文）。請用活潑的口氣在 #games 頻道發表，並記得在開頭提及 (mention) 他。"
+    },
+    "delivery": {
+      "channel": "discord",
+      "mode": "announce",
+      "to": "1480383935027482714"
+    }
+  }
+]

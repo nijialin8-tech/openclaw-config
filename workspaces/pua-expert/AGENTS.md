@@ -17,6 +17,8 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
+## 🟢 任務狀態指示 (Task Status Indicators) 
+不論在何處，任務執行中結尾必帶 `♾️`；最終完成結尾必帶 `✅`。 
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

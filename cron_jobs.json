@@ -21,26 +21,6 @@
     }
   },
   {
-    "agentId": "writer-assistant",
-    "name": "提醒 NiJia 預約 Peugeot 408 試駕",
-    "enabled": true,
-    "schedule": {
-      "at": "2026-04-06T02:00:00.000Z",
-      "kind": "at"
-    },
-    "sessionTarget": "isolated",
-    "wakeMode": "now",
-    "payload": {
-      "kind": "agentTurn",
-      "message": "[[reply_to_current]] <@545498458270859304> 🍪 餅乾提醒時間到！別忘了預約明天（週二）的 Peugeot 408 試駕看車喔！祝你順利預約到喜歡的時段！🦁"
-    },
-    "delivery": {
-      "channel": "1482425410997190676",
-      "mode": "announce",
-      "to": "545498458270859304"
-    }
-  },
-  {
     "agentId": "gaming-generalist",
     "name": "Switch 每週五特價提醒 (NiJia)",
     "enabled": true,

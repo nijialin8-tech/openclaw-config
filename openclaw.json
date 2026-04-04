@@ -354,7 +354,7 @@
       ],
       "guilds": {
         "1368483561723793408": {
-          "requireMention": true,
+          "requireMention": false,
           "users": []
         }
       }

@@ -1,0 +1,36 @@
+@startuml 龍蝦技術中心 - 簡化版
+!theme cerulean-outline
+skinparam ParticipantPadding 25
+skinparam SequenceMessagePadding 15
+skinparam defaultTextAlignment center
+
+title 龍蝦技術中心 - Sub-session 協作模式
+
+actor "User" as User
+participant "主代理\n(Tech Expert)" as Main
+box "龍蝦工程師團隊 (Sub-sessions)" #FFF3E0
+    participant "架構 / 開發 / 測試\n(Sub-agents)" as Lobsters
+end box
+
+User -> Main: 提出需求
+activate Main
+
+Main -> Lobsters: sessions_spawn()
+note right: 並行派生多個子會議\n各專注單一職責
+activate Lobsters
+
+Lobsters -> Lobsters: 並行執行任務
+Lobsters -> Main: 回傳結果
+deactivate Lobsters
+
+Main -> Main: 整合成果
+Main -> User: 交付解決方案
+deactivate Main
+
+note over Main, Lobsters
+Sub-session 架構: 主代理派生獨立子會議
+核心設計: 單一職責 + 並行執行 + 統籌交付
+技術機制: sessions_spawn (創建) | sessions_send (溝通)
+end note
+
+@enduml

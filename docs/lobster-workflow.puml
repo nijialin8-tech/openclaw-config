@@ -1,0 +1,134 @@
+@startuml 龍蝦技術顧問中心工作流程
+!theme cerulean-outline
+
+skinparam backgroundColor #FEFEFE
+skinparam handwritten false
+skinparam defaultTextAlignment center
+
+skinparam participant {
+    BackgroundColor<<Main>> #E3F2FD
+    BorderColor<<Main>> #1565C0
+    FontColor<<Main>> #1565C0
+    
+    BackgroundColor<<Lobster>> #FFF3E0
+    BorderColor<<Lobster>> #E65100
+    FontColor<<Lobster>> #E65100
+    
+    BackgroundColor<<User>> #E8F5E9
+    BorderColor<<User>> #2E7D32
+    FontColor<<User>> #2E7D32
+}
+
+skinparam sequence {
+    ArrowColor #424242
+    LifeLineBorderColor #9E9E9E
+    LifeLineBackgroundColor #FAFAFA
+}
+
+title 🦞 龍蝦技術顧問中心 - Sub-agent 協作流程
+
+actor "👤 用戶 (NiJia)" as User <<User>>
+participant "🤖 科技餅乾\n(主代理/PM)" as Main <<Main>>
+
+box "龍蝦工程師團隊 (Sub-agents)" #FAFAFA
+    participant "🏗️ 架構龍蝦" as Arch <<Lobster>>
+    participant "💻 開發龍蝦" as Dev <<Lobster>>
+    participant "🧪 測試龍蝦" as QA <<Lobster>>
+    participant "🛡️ 資安龍蝦" as Sec <<Lobster>>
+    participant "🚀 運維龍蝦" as Ops <<Lobster>>
+    participant "🔍 審查龍蝦" as Review <<Lobster>>
+end box
+
+== 第一階段：需求分析與任務分派 ==
+
+User -> Main: 提出技術需求
+activate Main
+
+Main -> Main: 分析任務類型與複雜度
+note right: 決定需要哪些龍蝦協作
+
+== 第二階段：派生龍蝦子代理 ==
+
+alt 需要架構設計
+    Main ->> Arch: sessions_spawn("設計資料庫Schema")
+    activate Arch
+    note right: 獨立 Session\n專注架構任務
+end
+
+alt 需要功能開發
+    Main ->> Dev: sessions_spawn("實作API端點")
+    activate Dev
+    note right: 獨立 Session\n專注開發任務
+end
+
+alt 需要測試驗證
+    Main ->> QA: sessions_spawn("撰寫測試案例")
+    activate QA
+    note right: 獨立 Session\n專注測試任務
+end
+
+alt 需要安全審計
+    Main ->> Sec: sessions_spawn("掃描依賴漏洞")
+    activate Sec
+    note right: 獨立 Session\n專注資安任務
+end
+
+alt 需要部署配置
+    Main ->> Ops: sessions_spawn("設定Dockerfile")
+    activate Ops
+    note right: 獨立 Session\n專注運維任務
+end
+
+alt 需要代碼審查
+    Main ->> Review: sessions_spawn("執行Ruff檢查")
+    activate Review
+    note right: 獨立 Session\n專注審查任務
+end
+
+== 第三階段：並行執行與協調 ==
+
+par 並行處理
+    Arch -> Arch: 設計系統架構
+    Arch -> Main: 🏗️ 完成架構設計
+    deactivate Arch
+
+    Dev -> Dev: 實作功能代碼
+    Dev -> Main: 💻 完成開發任務
+    deactivate Dev
+
+    QA -> QA: 執行測試驗證
+    QA -> Main: 🧪 完成測試報告
+    deactivate QA
+
+    Sec -> Sec: 執行安全掃描
+    Sec -> Main: 🛡️ 完成資安報告
+    deactivate Sec
+
+    Ops -> Ops: 設定CI/CD流程
+    Ops -> Main: 🚀 完成部署配置
+    deactivate Ops
+
+    Review -> Review: 執行Code Review
+    Review -> Main: 🔍 完成審查報告
+    deactivate Review
+end
+
+== 第四階段：統整與交付 ==
+
+Main -> Main: 整合各龍蝦交付成果
+note right: 跨 Session 協調\nsessions_send/query
+
+Main -> Main: 產生最終報告
+
+Main -> User: 📋 回傳完整解決方案
+deactivate Main
+
+note over Main
+**關鍵機制：**
+• sessions_spawn: 創建獨立子會話
+• sessions_send: 橫向溝通協調
+• 各龍蝦專注單一職責 (單一職責原則)
+• 主代理負責統籌與最終交付
+end note
+
+@enduml

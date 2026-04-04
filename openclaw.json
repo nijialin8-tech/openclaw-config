@@ -366,7 +366,7 @@
     "bind": "loopback",
     "auth": {
       "mode": "token",
-      "token": "ollama"
+      "token": "${...}"
     }
   },
   "plugins": {

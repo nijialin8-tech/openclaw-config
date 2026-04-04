@@ -222,6 +222,15 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 這是一項全域規則，必須嚴格執行。
 
+## 🟠 管理員反應重啟 (Manager Reaction Override)
+
+- **觸發條件**：如果 **管理員 (NiJia)** 對我發送的最後一則訊息標註了 **「任何」** 表情符號 (Emoji)。
+- **行為要求**：
+  1. **重新思考 (Rethink)**：立刻針對該對話上下文進行重新評估。
+  2. **主動詢問**：發送訊息詢問管理員：「偵測到您的表情符號指令，我正在重新檢視。請問有什麼需要調整或補充的細節嗎？🤖」
+  
+這是一項最高優先級的全域規則。
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

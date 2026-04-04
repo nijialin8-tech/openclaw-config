@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.1",
+    "lastTouchedAt": "2026-03-21T17:15:38.182Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-21T17:15:38.124Z",
+    "lastRunVersion": "2026.3.1",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true,
+    "defaultProfile": "openclaw"
+  },
+  "ui": {
+    "assistant": {
+      "name": "餅乾",
+      "avatar": "https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg"
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama": {
+        "baseUrl": "https://ollama.com/v1",
+        "apiKey": "${OLLAMA_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "gemini-3-flash-preview:cloud",
+            "name": "gemini-3-flash-preview:cloud",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 400000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "kimi-k2.5:cloud",
+            "name": "Kimi k2.5 (Cloud)",
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-v3:cloud",
+            "name": "DeepSeek V3 (Cloud)",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 64000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-r1:cloud",
+            "name": "DeepSeek R1 (Cloud)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 64000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3:cloud",
+            "name": "Qwen 3 (Cloud)",
+            "input": [
+              "text"
+            ],
+            "contextWindow": 64000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama/gemini-3-flash-preview:cloud",
+        "fallbacks": [
+          "ollama/kimi-k2.5:cloud",
+          "ollama/deepseek-v3:cloud",
+          "ollama/deepseek-r1:cloud",
+          "ollama/qwen3:cloud"
+        ]
+      },
+      "workspace": "/Users/nijia/.openclaw/workspace"
+    },
+    "list": [
+      {
+        "id": "personal",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "write",
+            "edit",
+            "web_search",
+            "web_fetch",
+            "exec",
+            "image",
+            "gh"
+          ],
+          "deny": []
+        }
+      },
+      {
+        "id": "maple-expert",
+        "workspace": "/Users/nijia/.openclaw/workspaces/maple-expert",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "write",
+            "edit",
+            "web_search",
+            "web_fetch",
+            "exec",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "tech-expert",
+        "workspace": "/Users/nijia/.openclaw/workspaces/tech-expert",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "write",
+            "edit",
+            "web_search",
+            "web_fetch",
+            "exec",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "sports-expert",
+        "workspace": "/Users/nijia/.openclaw/workspaces/sports-expert",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "web_search",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "gaming-generalist",
+        "workspace": "/Users/nijia/.openclaw/workspaces/gaming-generalist",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "web_search",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "animal-expert",
+        "workspace": "/Users/nijia/.openclaw/workspaces/animal-expert",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "web_search",
+            "web_fetch",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "writer-assistant",
+        "workspace": "/Users/nijia/.openclaw/workspaces/writer-assistant",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "write",
+            "edit",
+            "web_search",
+            "web_fetch"
+          ]
+        }
+      },
+      {
+        "id": "pua-expert",
+        "workspace": "/Users/nijia/.openclaw/workspaces/pua-expert",
+        "tools": {
+          "profile": "full",
+          "alsoAllow": [
+            "read",
+            "write",
+            "edit",
+            "web_search",
+            "web_fetch",
+            "exec",
+            "image"
+          ]
+        }
+      },
+      {
+        "id": "intern-lobster",
+        "name": "intern-lobster",
+        "workspace": "/Users/nijia/.openclaw/workspaces/intern-lobster",
+        "agentDir": "/Users/nijia/.openclaw/agents/intern-lobster/agent",
+        "model": "ollama/gemini-3-flash-preview:cloud"
+      },
+      {
+        "id": "senior-lobster",
+        "name": "senior-lobster",
+        "workspace": "/Users/nijia/.openclaw/workspaces/senior-lobster",
+        "agentDir": "/Users/nijia/.openclaw/agents/senior-lobster/agent",
+        "model": "ollama/gemini-3-flash-preview:cloud"
+      },
+      {
+        "id": "director-lobster",
+        "name": "director-lobster",
+        "workspace": "/Users/nijia/.openclaw/workspaces/director-lobster",
+        "agentDir": "/Users/nijia/.openclaw/agents/director-lobster/agent",
+        "model": "ollama/gemini-3-flash-preview:cloud"
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full",
+    "deny": [
+      "process",
+      "gateway",
+      "canvas"
+    ],
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "${BRAVE_API_KEY}"
+      },
+      "fetch": {
+        "enabled": true
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "personal",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "direct",
+          "id": "545498458270859304"
+        }
+      }
+    },
+    {
+      "agentId": "pua-expert",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1368483562793209919"
+        }
+      }
+    },
+    {
+      "agentId": "tech-expert",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1370352854157627392"
+        }
+      }
+    },
+    {
+      "agentId": "maple-expert",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1480378706126966794"
+        }
+      }
+    },
+    {
+      "agentId": "sports-expert",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1480383871961796729"
+        }
+      }
+    },
+    {
+      "agentId": "gaming-generalist",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1480383935027482714"
+        }
+      }
+    },
+    {
+      "agentId": "animal-expert",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1480384085745602560"
+        }
+      }
+    },
+    {
+      "agentId": "writer-assistant",
+      "match": {
+        "channel": "discord",
+        "peer": {
+          "kind": "channel",
+          "id": "1480407634073878638"
+        }
+      }
+    }
+  ],
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "cron": {},
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "token": "${DISCORD_KEY}",
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "allowFrom": [
+        "545498458270859304"
+      ],
+      "guilds": {
+        "1368483561723793408": {
+          "requireMention": true,
+          "users": []
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "ollama"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "discord"
+    ],
+    "entries": {
+      "openclaw-web-search": {}
+    }
+  }
+}

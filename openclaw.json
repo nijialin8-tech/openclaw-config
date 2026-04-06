@@ -345,6 +345,9 @@
   "cron": {},
   "channels": {
     "discord": {
+      "capabilities": {
+        "inlineButtons": "all"
+      },
       "enabled": true,
       "token": "${DISCORD_KEY}",
       "groupPolicy": "allowlist",
@@ -354,7 +357,7 @@
       ],
       "guilds": {
         "1368483561723793408": {
-          "requireMention": false,
+          "requireMention": true,
           "users": []
         }
       }

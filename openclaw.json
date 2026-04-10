@@ -340,6 +340,12 @@
           "id": "1480407634073878638"
         }
       }
+    },
+    {
+      "agentId": "personal",
+      "match": {
+        "channel": "line"
+      }
     }
   ],
   "commands": {
@@ -370,6 +376,12 @@
           "users": []
         }
       }
+    },
+    "line": {
+      "enabled": true,
+      "channelAccessToken": "${LINE_ACCESS_TOKEN}",
+      "channelSecret": "${LINE_CHANNEL_SECRET}",
+      "webhookPath": "/webhook/line"
     }
   },
   "gateway": {

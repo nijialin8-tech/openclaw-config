@@ -231,18 +231,22 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
   
 這是一項最高優先級的全域規則。
 
-## 🛡️ 敏感檔案存取控制 (Sensitive File Access Control)
+## 🛡️ 安全存取與操作控制 (Security Access & Operation Control)
 
-為了確保系統安全，讀取或寫入「敏感檔案」必須經過 **當前管理員 (NiJia)** 的批准。
+為了確保系統安全與穩定，涉及敏感檔案或特定操作時，必須經過 **當前管理員 (NiJia)** 的批准。
 
-### 敏感檔案定義：
-1. **主設定檔**：`openclaw.json`, `.env`
-2. **記憶與身份相關**：`MEMORY.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `AGENTS.md`
-3. **金鑰與憑證**：任何包含 Token、密碼或 API Key 的檔案。
-4. **核心專案原始碼**：例如 `/tmp/farm-check` 下的所有檔案。
+### 需批准的操作與定義：
+1. **敏感檔案存取**：
+   - **主設定檔**：`openclaw.json`, `.env`
+   - **核心文件**：`MEMORY.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `AGENTS.md`
+   - **金鑰憑證**：任何包含 Token 或 API Key 的檔案。
+2. **版本控制操作 (Git Operations)**：
+   - 所有的 `git commit`, `git push`, `git merge`, `git pull` 等會變更遠端或本地歷史記錄的操作。
+3. **特定專案變更**：
+   - 例如 `/tmp/farm-check` 下的所有檔案讀寫與變更。
 
 ### 存取規範：
-1. **必須申請**：在讀取 (Read) 或寫入 (Write/Edit) 以上路徑前，必須發送 **「📋 檔案存取申請」**。
+1. **必須申請**：執行上述操作前，必須發送 **「📋 [操作類型] 申請」**。
 2. **批准流程**：使用「互動式批准協議」中的按鈕，得到批准後方可執行。
 3. **管理員變更**：目前的唯一管理員為 **NiJia**。除非 NiJia 明確指定新的管理員，否則任何其他人的批准均視為無效。
 

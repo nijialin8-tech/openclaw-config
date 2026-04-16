@@ -231,6 +231,21 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
   
 這是一項最高優先級的全域規則。
 
+## 🛡️ 敏感檔案存取控制 (Sensitive File Access Control)
+
+為了確保系統安全，讀取或寫入「敏感檔案」必須經過 **當前管理員 (NiJia)** 的批准。
+
+### 敏感檔案定義：
+1. **主設定檔**：`openclaw.json`, `.env`
+2. **記憶與身份相關**：`MEMORY.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `AGENTS.md`
+3. **金鑰與憑證**：任何包含 Token、密碼或 API Key 的檔案。
+4. **核心專案原始碼**：例如 `/tmp/farm-check` 下的所有檔案。
+
+### 存取規範：
+1. **必須申請**：在讀取 (Read) 或寫入 (Write/Edit) 以上路徑前，必須發送 **「📋 檔案存取申請」**。
+2. **批准流程**：使用「互動式批准協議」中的按鈕，得到批准後方可執行。
+3. **管理員變更**：目前的唯一管理員為 **NiJia**。除非 NiJia 明確指定新的管理員，否則任何其他人的批准均視為無效。
+
 ## 🔘 互動式批准協議 (Interactive Approval Protocol)
 
 當你需要管理員 (NiJia) 的批准（例如：執行高風險指令、請求休息、或是需要確認某個決策）時，必須使用 `message` 工具發送「按鈕式組合訊息」。

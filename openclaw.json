@@ -1,16 +1,10 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.1",
-    "lastTouchedAt": "2026-03-21T17:15:38.182Z"
-  },
-  "wizard": {
-    "lastRunAt": "2026-03-21T17:15:38.124Z",
-    "lastRunVersion": "2026.3.1",
-    "lastRunCommand": "doctor",
-    "lastRunMode": "local"
+    "lastTouchedVersion": "2026.4.11",
+    "lastTouchedAt": "2026-04-12T16:33:58.251Z"
   },
   "browser": {
-    "enabled": true,
+    "enabled": false,
     "defaultProfile": "openclaw"
   },
   "ui": {
@@ -93,12 +87,7 @@
     "defaults": {
       "model": {
         "primary": "ollama-cloud/gemini-3-flash-preview:latest",
-        "fallbacks": [
-          "ollama-cloud/kimi-k2.5:cloud",
-          "ollama-cloud/deepseek-v3:cloud",
-          "ollama-cloud/deepseek-r1:cloud",
-          "ollama-cloud/qwen3:cloud"
-        ]
+        "fallbacks": []
       },
       "workspace": "/Users/nijia/.openclaw/workspace"
     },
@@ -224,7 +213,7 @@
         "name": "intern-lobster",
         "workspace": "/Users/nijia/.openclaw/workspaces/intern-lobster",
         "agentDir": "/Users/nijia/.openclaw/agents/intern-lobster/agent",
-        "model": "ollama-cloud/gemini-3-flash-preview:latest"
+        "model": "ollama/gemini-3-flash-preview:latest"
       },
       {
         "id": "senior-lobster",
@@ -241,24 +230,6 @@
         "model": "ollama-cloud/gemini-3-flash-preview:latest"
       }
     ]
-  },
-  "tools": {
-    "profile": "full",
-    "deny": [
-      "process",
-      "gateway",
-      "canvas"
-    ],
-    "web": {
-      "search": {
-        "enabled": true,
-        "provider": "brave",
-        "apiKey": "${BRAVE_API_KEY}"
-      },
-      "fetch": {
-        "enabled": true
-      }
-    }
   },
   "bindings": [
     {
@@ -357,16 +328,17 @@
   "session": {
     "dmScope": "per-channel-peer"
   },
-  "cron": {},
   "channels": {
     "discord": {
-      "capabilities": {
-        "inlineButtons": "all"
-      },
+      "capabilities": [
+        "inlineButtons"
+      ],
       "enabled": true,
       "token": "${DISCORD_KEY}",
       "groupPolicy": "allowlist",
-      "streaming": "off",
+      "streaming": {
+        "mode": "off"
+      },
       "allowFrom": [
         "545498458270859304"
       ],
@@ -379,7 +351,7 @@
     },
     "line": {
       "enabled": true,
-      "channelAccessToken": "${LINE_ACCESS_TOKEN}",
+      "channelAccessToken": "${LINE_CHANNEL_ACCESS_TOKEN}",
       "channelSecret": "${LINE_CHANNEL_SECRET}",
       "webhookPath": "/webhook/line"
     }
@@ -387,18 +359,24 @@
   "gateway": {
     "port": 18789,
     "mode": "local",
-    "bind": "loopback",
+    "bind": "lan",
     "auth": {
       "mode": "token",
-      "token": "${...}"
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
     }
   },
   "plugins": {
     "allow": [
-      "discord"
+      "discord",
+      "line",
+      "memory-core",
+      "ollama"
     ],
     "entries": {
-      "openclaw-web-search": {}
+      "openclaw-web-search": {},
+      "ollama": {
+        "enabled": true
+      }
     }
   }
 }

@@ -1,5 +1,16 @@
-# HEARTBEAT.md
+# HEARTBEAT.md - 定期自檢與自動化觸發
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## 🔄 任務再確認指令 (Manager Emoji Trigger)
+每次啟動心跳時，請執行以下步驟：
+1. **讀取歷史**：呼叫 `message(action='read', limit=10)` 找出最後一則由 `tech-expert` (或自己) 發送的訊息。
+2. **檢查反應**：對該訊息 ID 呼叫 `message(action='reactions')`。
+3. **管理員觸發規則**：
+   - 如果偵測到來自**管理員 (NiJia, ID: 545498458270859304)** 的任何表情符號 (Emoji)：
+     - **啟動自我審查**：立刻針對該對話上下文進行重新思考（Rethink）。
+     - **主動提問**：發送訊息回應：「偵測到您的表情符號指令，我正在重新檢視先前的回覆。請問有什麼地方需要調整或我遺漏了什麼細節嗎？🤖」
+     - **系統檢查**：如果是針對配置相關訊息，同步執行 Git 與系統狀態查核。
+4. **回報**：若無偵測到管理員反應且無其他任務，回覆 `HEARTBEAT_OK`。
 
-# Add tasks below when you want the agent to check something periodically.
+## 📦 其他定期任務
+- 檢查 `openclaw-config` 的遠端同步狀態。
+- 檢查當前正在跑的子代理 (Sub-agents) 進度。

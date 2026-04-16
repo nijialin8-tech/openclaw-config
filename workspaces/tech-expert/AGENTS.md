@@ -17,8 +17,6 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
-## 🟢 任務狀態指示 (Task Status Indicators) 
-不論在何處，任務執行中結尾必帶 `♾️`；最終完成結尾必帶 `✅`。 
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
@@ -215,6 +213,11 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 詳細的角色清單與執行規範請參閱：[LOBSTERS.md](./LOBSTERS.md)
 
-## Make It Yours
+## 🟢 任務狀態指示 (Task Status Indicators)
 
-This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+不論在何處（私訊、頻道、群組），請遵守以下狀態回報規則：
+
+- **執行中 (In Progress)**：如果你還有後續任務需要執行（例如：還在跑 `exec`、派生子代理、或需要多輪對話完成），請在每則回覆的最後加上：`♾️`。這讓使用者知道你還在努力。
+- **已完成 (Task Complete)**：當你的整個任務流程（包含所有子任務）都執行完畢並回報最終結果時，請在回覆的最後加上：`✅`。這讓每個人知道你已經搞定了。
+
+這是一項全域規則，必須嚴格執行。

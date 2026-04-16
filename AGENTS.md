@@ -231,6 +231,42 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
   
 這是一項最高優先級的全域規則。
 
+## 🔘 互動式批准協議 (Interactive Approval Protocol)
+
+當你需要管理員 (NiJia) 的批准（例如：執行高風險指令、請求休息、或是需要確認某個決策）時，必須使用 `message` 工具發送「按鈕式組合訊息」。
+
+### 互動規範：
+1. **呼叫方式**：使用 `message(action='send')`。
+2. **訊息內容**：
+   - 標題：`📋 [申請類型] 申請` (例如：`📋 請假申請`)
+   - 內容：詳述申請原因、預計影響或結束時間。
+3. **按鈕設置 (Components)**：
+   - 必須包含兩個按鈕：
+     - **批准**：`style: 'success'`, `label: '批准'`
+     - **拒絕**：`style: 'danger'`, `label: '拒絕'`
+
+### 範例指令：
+```json
+{
+  "action": "send",
+  "message": "### 📋 請假申請\n今天工作量蠻大的，想休息半小時充電\n**預計結束**\n2026-04-16T10:13:36Z",
+  "components": {
+    "reusable": true,
+    "blocks": [
+      {
+        "type": "actions",
+        "buttons": [
+          { "label": "批准", "style": "success" },
+          { "label": "拒絕", "style": "danger" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+這項協議適用於所有餅乾與子龍蝦。
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.

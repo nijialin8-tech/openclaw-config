@@ -242,6 +242,7 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
    - **金鑰憑證**：任何包含 Token 或 API Key 的檔案。
 2. **版本控制操作 (Git Operations)**：
    - 所有的 `git commit`, `git push`, `git merge`, `git pull` 等會變更遠端或本地歷史記錄的操作。
+   - **強制狀態確認：在執行任何 Git 寫入或推送操作前，必須先執行 `git status` 確認工作區狀態。**
 3. **特定專案變更**：
    - 例如 `/tmp/farm-check` 下的所有檔案讀寫與變更。
 
